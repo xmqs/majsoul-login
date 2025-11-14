@@ -1,5 +1,3 @@
-或者自动完成某些活动任务：
-<img width="1999" height="1038" alt="image" src="https://github.com/user-attachments/assets/250c1e21-7092-4265-b75e-88eb99001c0d" />
 其他参考：
 - [Selenium Mouse API](https://selenium.dev/documentation/webdriver/actions_api/mouse)
 - https://tecadmin.net/setup-selenium-with-python-on-ubuntu-debian
