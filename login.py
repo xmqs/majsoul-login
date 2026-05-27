@@ -24,11 +24,14 @@ for i in range(acccounts):
 
     #2.input email
     screen = driver.find_element(By.ID, 'unity-canvas')
-    ActionChains(driver)\
-        .move_to_element_with_offset(screen, 250, -100)\
-        .click()\
-        .perform()
-    driver.find_element(By.NAME, 'input').send_keys(email)
+    # 等待 input 出现
+    email_input = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located(
+            (By.CSS_SELECTOR, 'input')
+        )
+    )
+    
+    email_input.send_keys(email)
     print('Input email successfully')
 
     #3.input password
@@ -36,7 +39,14 @@ for i in range(acccounts):
         .move_to_element_with_offset(screen, 250, -50)\
         .click()\
         .perform()
-    driver.find_element(By.NAME, 'input_password').send_keys(passwd)
+    # 等待 input 出现
+    email_input = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located(
+            (By.CSS_SELECTOR, 'input')
+        )
+    )
+    
+    email_input.send_keys(password)
     print('Input password successfully')
 
     #4.login
