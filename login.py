@@ -24,10 +24,28 @@ for i in range(acccounts):
     options.add_experimental_option('useAutomationExtension', False)
     
     driver = webdriver.Chrome(options=options)
-    driver.set_window_size(1000, 720)
+    driver.set_window_size(1280, 720)
     driver.get("https://game.maj-soul.net/1/")
     print(f'Account {i+1} loading game...')
     sleep(10)
+
+    # 获取canvas实际尺寸和位置
+    canvas_size = driver.execute_script("""
+        const c = document.querySelector('canvas');
+        return {width: c.width, height: c.height, rect: c.getBoundingClientRect()};
+    """)
+    print(f'Canvas size: {canvas_size}')
+    
+    # 先保存截图看当前页面状态
+    driver.save_screenshot("before_login.png")
+    print('Screenshot saved: before_login.png')
+
+     ActionChains(driver)\
+        .move_to_element_with_offset(screen, 740, 200)\
+        .click()
+
+    driver.save_screenshot("click.png")
+    print('Screenshot saved: click.png')
 
     # 2. 等待游戏画布加载
     try:
