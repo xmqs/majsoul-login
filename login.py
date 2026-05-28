@@ -40,13 +40,6 @@ for i in range(acccounts):
     driver.save_screenshot("before_login.png")
     print('Screenshot saved: before_login.png')
 
-     ActionChains(driver)\
-        .move_to_element_with_offset(screen, 740, 200)\
-        .click()
-
-    driver.save_screenshot("click.png")
-    print('Screenshot saved: click.png')
-
     # 2. 等待游戏画布加载
     try:
         screen = WebDriverWait(driver, 20).until(
@@ -56,6 +49,13 @@ for i in range(acccounts):
         driver.save_screenshot(f"error_{i+1}.png")
         driver.quit()
         raise
+
+    ActionChains(driver)\
+        .move_to_element_with_offset(screen, 740, 200)\
+        .click()
+
+    driver.save_screenshot("click.png")
+    print('Screenshot saved: click.png')
 
     # 3. 输入账号（修复：正确的Canvas输入方式）
     ActionChains(driver)\
