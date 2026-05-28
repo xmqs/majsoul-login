@@ -41,7 +41,7 @@ for i in range(acccounts):
 
     # 3. 输入账号（修复：正确的Canvas输入方式）
     ActionChains(driver)\
-        .move_to_element_with_offset(screen, 250, -100)\
+        .move_to_element_with_offset(screen, 420, 0)\
         .click()\
         .send_keys(email)\
         .perform()
@@ -50,7 +50,7 @@ for i in range(acccounts):
 
     # 4. 输入密码（修复：正确的Canvas输入方式）
     ActionChains(driver)\
-        .move_to_element_with_offset(screen, 250, -50)\
+        .move_to_element_with_offset(screen, 420, 90)\
         .click()\
         .send_keys(passwd)\
         .perform()
