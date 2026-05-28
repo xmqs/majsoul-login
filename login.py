@@ -66,46 +66,7 @@ for i in range(acccounts):
     sleep(1)
     print('Input email successfully')
 
-    # 4. 输入密码（修复：正确的Canvas输入方式）
-    ActionChains(driver)\
-        .move_to_element_with_offset(screen, 740, 260)\
-        .click()\
-        .send_keys(passwd)\
-        .perform()
-    sleep(1)
-    print('Input password successfully')
-
-    # 5. 点击登录
-    ActionChains(driver)\
-        .move_to_element_with_offset(screen, 740, 365)\
-        .click()\
-        .perform()
-    print('Entering game...')
-    sleep(30)  # 增加等待时间，等待游戏加载完成
-    print('Login success')
-
-    # 6. 领取月卡 - 月卡弹窗会在登录后自动显示在中间，直接点击即可
-    print('Attempting to claim monthly card...')
-    sleep(5)  # 等待月卡弹窗出现
-    
-    # 第一次点击 - 打开月卡弹窗或点击领取
-    ActionChains(driver)\
-        .move_to_element_with_offset(screen, 0, 50)\
-        .click()\
-        .perform()
-    sleep(2)
-    
-    # 第二次点击 - 确认领取或关闭弹窗
-    ActionChains(driver)\
-        .move_to_element_with_offset(screen, 0, 50)\
-        .click()\
-        .perform()
-    sleep(2)
-    
-    print('Monthly card claim attempt completed')
-    
-    # 保存截图以便调试
-    driver.save_screenshot(f"result_{i+1}.png")
-    print(f'Screenshot saved as result_{i+1}.png')
+    driver.save_screenshot("email.png")
+    print('Screenshot saved: email.png')
     
     driver.quit()
