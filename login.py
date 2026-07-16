@@ -69,7 +69,7 @@ for i in range(acccounts):
 
     #4.ckcik center
     ActionChains(driver)\
-        .move_to_element_with_offset(screen, 200, 200)\
+        .move_to_element_with_offset(screen, 200, 60)\
         .click()\
         .perform()
     print(f'Account {i+1} entering game...')
