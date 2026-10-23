@@ -76,5 +76,6 @@ for i in range(acccounts):
     sleep(80)  # loading...
     
     print(f'Account {i+1} login completed')
+    print(f'Account completed')
 
     driver.quit()
